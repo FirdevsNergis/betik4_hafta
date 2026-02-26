@@ -1,0 +1,125 @@
+A=[[{
+    'isim':'ayberk',
+    'yas':'20',
+    'cinsiyet':'erkek'
+},
+    {
+        'isim':'nergiz',
+        'yas':'18',
+        'cinsiyet':'kadın'
+    }],
+    [{
+        'isim':'enes',
+        'yas':'22',
+        'cinsiyet':'erkek'
+    },
+        {
+            'isim':'atakan',
+            'yas':'19',
+            'cinsiyet':'erkek'
+    }],
+    [{
+        'isim':'mehmet',
+        'yas':'17',
+        'cinsiyet':'erkek'
+    },
+        {
+        'isim':'can',
+        'yas':'21',
+        'cinsiyet':'erkek'
+    }],
+    [{
+        'isim':'irem',
+        'yas':'20',
+        'cinsiyet':'kadın'
+    },
+        {
+            'isim':'benan',
+            'yas':'19',
+            'cinsiyet':'kadın'
+    }]
+]
+for i in A:
+    for j in i:
+        #try:
+            #print(j)
+            print(j['isim'])
+        #except:
+        #pass
+    
+    
+for j in A:
+    for k in A:
+        print(A[i][j][k])
+
+**********************************
+
+#main.py
+
+import time
+import random
+
+class Ucan:
+    def __init__(self,ucak_tipi):
+        self.ucak_tip=ucak_tipi
+        self.konumz=0
+        pass
+
+    def __init__(self,ucak_tipi,f_sayisi):
+        self.ucak_tip=ucak_tipi
+        self.f_sayisi=f_sayisi
+        self.konumz=0
+
+    def havalan(self):
+        if self.konumz==0:
+            print(self.ucak_tip + ' yerden havalandı')
+
+        elif self.konumz<1000:
+            print(self.ucak_tip + ' yükseliyor')
+
+        else:
+            print(self.ucak_tip + ' irtifada')
+
+
+        self.konumz+=100
+        pass
+
+
+    def konum(self):
+        if self.konumz==0:
+            print(self.ucak_tip + ' yerde')
+
+        elif self.konumz>1000:
+            print(self.ucak_tip + ' irtifada')
+
+        else:
+            print(self.ucak_tip + ' yükseliyor')
+
+    def alcal(self):
+        if self.konumz >0:
+            self.konumz-=100
+            print(self.ucak_tip + ' alçalıyor')
+        else:
+            print(self.ucak_tip + ' uçak iniş yaptı')
+
+    def bombala(self):
+        if self.f_sayisi>0:
+            print(self.ucak_tip + ' füze fırlatıldı')
+            self.f_sayisi -=1
+            print(' kalan füze sayisi:',self.f_sayisi)
+        else:
+            print(' füze kalmadı')
+
+
+
+#ucak.py
+from main import *
+
+iha1=Ucan('iha')
+iha1.konum()
+iha1.havalan()
+iha1.konum()
+iha1.bombala()
+iha1.alcal()
+for i in range(20):
+    iha1.havalan()
