@@ -122,4 +122,22 @@ iha1.konum()
 iha1.bombala()
 iha1.alcal()
 for i in range(20):
+
     iha1.havalan()
+*************************************
+import time 
+def trade(rsi):
+    if rsi<20:
+        print('-----------ALIM YAPILDI')
+    elif rsi>80:
+        print('-----------SATIŞ YAPILDI')
+        time.sleep(1)
+
+    else:
+        print('====POZİSYONUNU KORU====')
+
+def math(a,b):
+    try:
+        print(a//b)
+    except:
+        print('sayıyı sıfıra böldün sonuc =0')
